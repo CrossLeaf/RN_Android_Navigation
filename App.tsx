@@ -15,7 +15,9 @@ import {
   ScrollView,
   View,
   Text,
-  StatusBar, Button,
+  StatusBar,
+  Button,
+  NativeModules,
 } from 'react-native';
 
 import {
@@ -31,7 +33,13 @@ declare var global: {HermesInternal: null | {}};
 const App = () => {
   return (
     <>
-      <Button title="1234" onPress={() => console.log('123456')} />
+      <Button
+        title="1234test"
+        onPress={() => {
+          console.log('123456');
+          NativeModules.ViewControllerModule.showActivity();
+        }}
+      />
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <ScrollView
