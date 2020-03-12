@@ -1,5 +1,6 @@
 package com.viewcontroltest
 
+import android.content.Intent
 import android.util.Log
 import com.facebook.react.bridge.ReactApplicationContext
 import com.facebook.react.bridge.ReactContextBaseJavaModule
@@ -14,5 +15,7 @@ class ViewControllerModule(reactContext: ReactApplicationContext) : ReactContext
     @ReactMethod
     fun showActivity() {
         Log.d("ViewController", "show activity.")
+        val intent = Intent(currentActivity, MainActivity2::class.java)
+        currentActivity?.startActivity(intent)
     }
 }
